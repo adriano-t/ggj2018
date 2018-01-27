@@ -6,6 +6,7 @@ TagManager:
   tags:
   - crate
   - weight
+  - fire
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - player
   - crate
-  - 
+  - fire
   - 
   - 
   - 
