@@ -240,10 +240,11 @@ public class PlayerController : MonoBehaviour
     {
         if(startPos != gun.transform.position)
         {
+            Debug.Log (color);
             gunTop.material.SetColor("_EmissionColor",Color.Lerp (gunTop.material.GetColor ("_EmissionColor"), color, Time.deltaTime));
         }
         else
-        {
+        { 
             gunTop.material.SetColor ("_EmissionColor", Color.Lerp (gunTop.material.GetColor ("_EmissionColor"), Color.black,Time.deltaTime));
         }
 
