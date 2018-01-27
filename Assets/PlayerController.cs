@@ -236,6 +236,15 @@ public class PlayerController : MonoBehaviour
 
     void SetGunParticles(Vector3 startPos, Vector3 endPos, Color color)
     {
+        if(startPos != gun.transform.position)
+        {
+            gunTop.material.SetColor("_EmissionColor",Color.Lerp (gunTop.material.GetColor ("_EmissionColor"), color, Time.deltaTime));
+        }
+        else
+        {
+            gunTop.material.SetColor ("_EmissionColor", Color.Lerp (gunTop.material.GetColor ("_EmissionColor"), Color.black,Time.deltaTime));
+        }
+
         ps.gameObject.SetActive(true);
         ps.transform.position = startPos;
         ps.transform.forward = (endPos - startPos).normalized;
