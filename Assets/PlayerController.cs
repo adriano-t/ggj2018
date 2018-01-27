@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     Vector3 camLocalStart;
     Vector3 directionVector;
+    public Renderer gunTop;
     float bobbing = 0;
     float breathing = 0;
     bool crouch = false;
@@ -194,14 +195,14 @@ public class PlayerController : MonoBehaviour
                 {
                     hitInfo.transform.Translate(Vector3.up * Time.deltaTime * 2f);
                     weightAmmo += 0.01f;
-                    SetGunParticles(hitInfo.point, gun.transform.position);
+                    SetGunParticles(hitInfo.point, gun.transform.position, Color.blue);
                 }
             }
             else if (tag == "fire" && !hitInfo.transform.GetComponent<Fire>().dead)
             {
                 hitInfo.transform.GetComponent<Fire>().DecreaseFire();
                 fireAmmo += 0.5f;
-                SetGunParticles(hitInfo.point, gun.transform.position);
+                SetGunParticles(hitInfo.point, gun.transform.position, Color.red);
             }
             else if (tag == "cisterna" && fireAmmo > 0)
             {
@@ -224,7 +225,7 @@ public class PlayerController : MonoBehaviour
                 {
                     hitInfo.transform.Translate(Vector3.down * Time.deltaTime * 2f);
                     weightAmmo -= 0.01f;
-                    SetGunParticles(gun.transform.position, hitInfo.point);
+                    SetGunParticles(gun.transform.position, hitInfo.point, Color.blue);
                 }
             }
         }
@@ -235,11 +236,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void SetGunParticles(Vector3 startPos, Vector3 endPos)
+    void SetGunParticles(Vector3 startPos, Vector3 endPos, Color color)
     {
         ps.gameObject.SetActive(true);
         ps.transform.position = startPos;
         ps.transform.forward = (endPos - startPos).normalized;
+        var main = ps.main;
+        main.startColor = color;
     }
 
     void FixedUpdate()
