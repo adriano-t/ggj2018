@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
 
     float bobbingSpeedMultiplyer = 1;
     float speedMultiplyer = 1;
-     
-     
+
+    public ParticleSystem ps;
     //sounds
     [SerializeField] 
     AudioClip[] soundSteps;
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool jump;
 
     LayerMask crateLayerMask;
+    public GameObject gun;
 
     void Awake ()
     {
@@ -194,11 +195,12 @@ public class PlayerController : MonoBehaviour
                 {
                     hitInfo.transform.Translate(Vector3.up * Time.deltaTime *2f);
                     weightAmmo += 0.01f;
+                    SetGunParticles (gun.transform.position, hitInfo.point);
                 }
             }
         }
-        //aggiungi peso
-        if (Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f, crateLayerMask))
+        //aggiungi peso 
+        else if (Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f, crateLayerMask))
         {
             string tag = hitInfo.collider.tag;
             if (tag == "crate")
@@ -207,9 +209,23 @@ public class PlayerController : MonoBehaviour
                 {
                     hitInfo.transform.Translate(Vector3.down * Time.deltaTime * 2f);
                     weightAmmo -= 0.01f;
+                    SetGunParticles (hitInfo.point, gun.transform.position);
                 }
             }
         }
+        else
+        {
+            ps.gameObject.SetActive (false);
+        }
+    }
+
+    void SetGunParticles(Vector3 startPos, Vector3 endPos)
+    {
+        ps.gameObject.SetActive (true);
+        ps.transform.position = startPos;
+        ps.transform.forward = (endPos - startPos).normalized;
+
+        Debug.Log (ps.transform.forward);
     }
      
     void FixedUpdate ()
