@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private bool jump;
 
     LayerMask crateLayerMask;
+    LayerMask fireLayerMask;
     public GameObject gun;
 
     void Awake ()
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody> ();
         cc = GetComponent<CapsuleCollider> ();
         crateLayerMask = LayerMask.GetMask("crate");
+        fireLayerMask = LayerMask.GetMask("fire");
         //sounds
         sndSourceSteps = gameObject.AddComponent<AudioSource> ();
         sndSourceSteps.clip = soundSteps[0];
@@ -216,14 +218,18 @@ public class PlayerController : MonoBehaviour
         }
 
         //Assorbo il fuoco
-        if(Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        if(Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f, fireLayerMask))
         {
             string tag = hitInfo.collider.tag;
-            if (tag == "fire")
+            if (hitInfo.transform.GetComponent<Fire>().fireHp > 0 && tag == "fire")
             {
                 hitInfo.transform.GetComponent<Fire>().DecreaseFire();
                 fireAmmo++;
-                SetGunParticles(gun.transform.position, hitInfo.point);
+                SetGunParticles(hitInfo.point, gun.transform.position);
+            }
+            else
+            {
+                ps.gameObject.SetActive(false);
             }
         }
         else
