@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour
             {
                 hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
                 fireAmmo -= 0.5f;
-                SetGunParticles(gun.transform.position, hitInfo.point);
+                SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
             }
             else
             {
