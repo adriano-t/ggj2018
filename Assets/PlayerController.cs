@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private CapsuleCollider cc;
     public float weightAmmo = 0f;
-    
+    public float fireAmmo = 0f;
+
     Vector3 camLocalStart;
     Vector3 directionVector;
     float bobbing = 0;
@@ -211,6 +212,18 @@ public class PlayerController : MonoBehaviour
                     weightAmmo -= 0.01f;
                     SetGunParticles (gun.transform.position, hitInfo.point);
                 }
+            }
+        }
+
+        //Assorbo il fuoco
+        if(Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        {
+            string tag = hitInfo.collider.tag;
+            if (tag == "fire")
+            {
+                hitInfo.transform.GetComponent<Fire>().DecreaseFire();
+                fireAmmo++;
+                SetGunParticles(gun.transform.position, hitInfo.point);
             }
         }
         else

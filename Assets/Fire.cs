@@ -5,19 +5,18 @@ using UnityEngine;
 public class Fire : MonoBehaviour {
 
     private float fireHp = 100;
-    public bool test;
 
     private void Update()
     {
 
     }
 
-    public void DecreaseHp()
+    public void DecreaseFire()
     {
         fireHp -= 0.5f;
         if(fireHp==0)
         {
-            //GetComponentInChildren<FireBaseScript>().End();
+            //Diminuisce il particle system
         }
     }
 
