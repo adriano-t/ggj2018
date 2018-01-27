@@ -190,9 +190,9 @@ public class PlayerController : MonoBehaviour
             string tag = hitInfo.collider.tag;
             if(tag == "crate")
             {
-                if(hitInfo.transform.parent.transform.position.y<4.5f)
+                if(hitInfo.transform.position.y<4.5f)
                 {
-                    hitInfo.transform.parent.transform.Translate(Vector3.up * Time.deltaTime *2f);
+                    hitInfo.transform.Translate(Vector3.up * Time.deltaTime *2f);
                     weightAmmo += 0.01f;
                 }
             }
@@ -203,22 +203,11 @@ public class PlayerController : MonoBehaviour
             string tag = hitInfo.collider.tag;
             if (tag == "crate")
             {
-                if (hitInfo.transform.parent.transform.position.y > 1f && weightAmmo>0)
+                if (hitInfo.transform.position.y > 0.5f && weightAmmo>0)
                 {
-                    hitInfo.transform.parent.transform.Translate(Vector3.down * Time.deltaTime * 2f);
+                    hitInfo.transform.Translate(Vector3.down * Time.deltaTime * 2f);
                     weightAmmo -= 0.01f;
                 }
-            }
-        }
-
-
-        if (Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
-        {
-            string tag = hitInfo.collider.tag;
-            if (tag == "weight")
-            {
-                if (weightAmmo < 1f)
-                    weightAmmo += 0.01f;
             }
         }
     }
