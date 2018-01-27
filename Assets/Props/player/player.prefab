@@ -356,14 +356,14 @@ MonoBehaviour:
   crouchSpeed: 2
   bobbingAmount: 0.3
   bobbingSpeed: 40
+  cursor: {fileID: 0}
   ps: {fileID: 198997560989639740}
   soundSteps:
   - {fileID: 8300000, guid: 91038164d02aabe4cafb35fbe218dea9, type: 3}
   - {fileID: 8300000, guid: fc8e26cd7ba85174cb9eca22b4e786c7, type: 3}
   - {fileID: 8300000, guid: 04804903f05f0dd4c90b42ea88bf416e, type: 3}
   cam: {fileID: 4881327129940512}
-  weightAmmo: 0
-  fireAmmo: 0
+  ammo: 0
   gunTop: {fileID: 23304048972106930}
   gun: {fileID: 1151682133774204}
 --- !u!114 &114511701386122776
