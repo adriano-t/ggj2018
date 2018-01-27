@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 30b20ea15d34d0d4592a429293a6f457
+timeCreated: 1517057105
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Box001
+    100004: cornice_porta
+    100006: cornice_porta 1
+    100008: cornice_porta1
+    100010: cornice_porta2
+    100012: corridoio_01
+    100014: corridoio_01 1
+    100016: corridoio_01 2
+    100018: corridoio_01_floor
+    100020: corridoio_01_floor 1
+    100022: corridoio_01_floor_inside
+    100024: corridoio_01_floor_inside 1
+    100026: corridoio_01_inside
+    100028: corridoio_01_inside 1
+    100030: corridoio_01_inside_grp
+    100032: corridoio_01_inside_grp 1
+    100034: corridoio_02
+    100036: Hub_central
+    100038: Hub_central1
+    100040: Hub_central_floor
+    100042: Hub_central_floor_grp
+    100044: Hub_central_floor_inside
+    100046: Hub_central_grp
+    100048: passaggio_01
+    100050: passaggio_02
+    100052: porta_01
+    100054: porta_anta_dx
+    100056: porta_anta_sx
+    100058: Small_Hub_01
+    100060: Small_Hub_01_grp
+    100062: Small_Hub_01_inside
+    100064: Small_Hub_02
+    100066: Small_Hub_02_grp
+    100068: Small_Hub_02_inside
+    100070: Small_Hub_floor_01
+    100072: Small_Hub_floor_01_grp
+    100074: Small_Hub_floor_02
+    100076: Small_Hub_floor_02_grp
+    100078: Small_Hub_inside_01
+    100080: Small_Hub_inside_02
+    400000: //RootNode
+    400002: Box001
+    400004: cornice_porta
+    400006: cornice_porta 1
+    400008: cornice_porta1
+    400010: cornice_porta2
+    400012: corridoio_01
+    400014: corridoio_01 1
+    400016: corridoio_01 2
+    400018: corridoio_01_floor
+    400020: corridoio_01_floor 1
+    400022: corridoio_01_floor_inside
+    400024: corridoio_01_floor_inside 1
+    400026: corridoio_01_inside
+    400028: corridoio_01_inside 1
+    400030: corridoio_01_inside_grp
+    400032: corridoio_01_inside_grp 1
+    400034: corridoio_02
+    400036: Hub_central
+    400038: Hub_central1
+    400040: Hub_central_floor
+    400042: Hub_central_floor_grp
+    400044: Hub_central_floor_inside
+    400046: Hub_central_grp
+    400048: passaggio_01
+    400050: passaggio_02
+    400052: porta_01
+    400054: porta_anta_dx
+    400056: porta_anta_sx
+    400058: Small_Hub_01
+    400060: Small_Hub_01_grp
+    400062: Small_Hub_01_inside
+    400064: Small_Hub_02
+    400066: Small_Hub_02_grp
+    400068: Small_Hub_02_inside
+    400070: Small_Hub_floor_01
+    400072: Small_Hub_floor_01_grp
+    400074: Small_Hub_floor_02
+    400076: Small_Hub_floor_02_grp
+    400078: Small_Hub_inside_01
+    400080: Small_Hub_inside_02
+    2300000: Box001
+    2300002: cornice_porta
+    2300004: cornice_porta 1
+    2300006: cornice_porta1
+    2300008: cornice_porta2
+    2300010: corridoio_01 1
+    2300012: corridoio_01 2
+    2300014: corridoio_01_floor
+    2300016: corridoio_01_floor 1
+    2300018: corridoio_01_floor_inside
+    2300020: corridoio_01_floor_inside 1
+    2300022: corridoio_01_inside
+    2300024: corridoio_01_inside 1
+    2300026: Hub_central
+    2300028: Hub_central1
+    2300030: Hub_central_floor
+    2300032: Hub_central_floor_inside
+    2300034: porta_anta_dx
+    2300036: porta_anta_sx
+    2300038: Small_Hub_01
+    2300040: Small_Hub_01_inside
+    2300042: Small_Hub_02
+    2300044: Small_Hub_02_inside
+    2300046: Small_Hub_floor_01
+    2300048: Small_Hub_floor_02
+    2300050: Small_Hub_inside_01
+    2300052: Small_Hub_inside_02
+    3300000: Box001
+    3300002: cornice_porta
+    3300004: cornice_porta 1
+    3300006: cornice_porta1
+    3300008: cornice_porta2
+    3300010: corridoio_01 1
+    3300012: corridoio_01 2
+    3300014: corridoio_01_floor
+    3300016: corridoio_01_floor 1
+    3300018: corridoio_01_floor_inside
+    3300020: corridoio_01_floor_inside 1
+    3300022: corridoio_01_inside
+    3300024: corridoio_01_inside 1
+    3300026: Hub_central
+    3300028: Hub_central1
+    3300030: Hub_central_floor
+    3300032: Hub_central_floor_inside
+    3300034: porta_anta_dx
+    3300036: porta_anta_sx
+    3300038: Small_Hub_01
+    3300040: Small_Hub_01_inside
+    3300042: Small_Hub_02
+    3300044: Small_Hub_02_inside
+    3300046: Small_Hub_floor_01
+    3300048: Small_Hub_floor_02
+    3300050: Small_Hub_inside_01
+    3300052: Small_Hub_inside_02
+    4300000: Box001
+    4300002: cornice_porta
+    4300004: cornice_porta1
+    4300006: porta_anta_sx
+    4300008: porta_anta_dx
+    4300010: cornice_porta
+    4300012: cornice_porta2
+    4300014: Small_Hub_inside_01
+    4300016: Small_Hub_floor_01
+    4300018: corridoio_01
+    4300020: corridoio_01_floor
+    4300022: corridoio_01_inside
+    4300024: corridoio_01_floor_inside
+    4300026: Hub_central_floor_inside
+    4300028: Hub_central_floor
+    4300030: Hub_central
+    4300032: Hub_central1
+    4300034: Small_Hub_01
+    4300036: Small_Hub_floor_02
+    4300038: Small_Hub_inside_02
+    4300040: Small_Hub_01_inside
+    4300042: Small_Hub_02
+    4300044: Small_Hub_02_inside
+    4300046: corridoio_01
+    4300048: corridoio_01_floor
+    4300050: corridoio_01_inside
+    4300052: corridoio_01_floor_inside
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
