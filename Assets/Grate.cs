@@ -34,7 +34,7 @@ public class Grate : MonoBehaviour
 
         t = 0;
         startPos = crate.position;
-        endPos= new Vector3(transform.position.x, transform.position.y+0.5f, transform.position.z);
+        endPos= new Vector3(transform.position.x, transform.position.y+2f, transform.position.z);
         while (t<1)
         {
             crate.position = Vector3.Lerp(startPos, endPos, t);

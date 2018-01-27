@@ -26,7 +26,7 @@ namespace DigitalRuby.PyroParticles
         public float StartTime = 1.0f;
 
         [Tooltip("How long the script takes to fully stop. This is used to fade out animations and sounds, etc.")]
-        public float StopTime = 3.0f;
+        public float StopTime = 5.0f;
 
         [Tooltip("How long the effect lasts. Once the duration ends, the script lives for StopTime and then the object is destroyed.")]
         public float Duration = 2.0f;
@@ -55,6 +55,11 @@ namespace DigitalRuby.PyroParticles
             yield return new WaitForSeconds(StopTime + 2.0f);
 
             GameObject.Destroy(gameObject);
+        }
+
+        public void End()
+        {
+            Stop();
         }
 
         private void StartParticleSystems()

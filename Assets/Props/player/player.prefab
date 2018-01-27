@@ -43,21 +43,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1367722565205126
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4864808364904400}
-  m_Layer: 0
-  m_Name: Hand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1419296751901298
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +55,8 @@ GameObject:
   - component: {fileID: 124235046539928444}
   - component: {fileID: 81673868603407286}
   - component: {fileID: 114856942208383794}
+  - component: {fileID: 114815604689724122}
+  - component: {fileID: 114511701386122776}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -196,21 +183,8 @@ Transform:
   - {fileID: 4554769735187342}
   - {fileID: 4505695774925060}
   m_Father: {fileID: 4881327129940512}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!4 &4864808364904400
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367722565205126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4881327129940512}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4881327129940512
 Transform:
   m_ObjectHideFlags: 1
@@ -221,7 +195,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4864808364904400}
   - {fileID: 4655365875836330}
   m_Father: {fileID: 4308133265762706}
   m_RootOrder: 0
@@ -383,12 +356,45 @@ MonoBehaviour:
   crouchSpeed: 2
   bobbingAmount: 0.3
   bobbingSpeed: 40
+  ps: {fileID: 198997560989639740}
   soundSteps:
   - {fileID: 8300000, guid: 91038164d02aabe4cafb35fbe218dea9, type: 3}
   - {fileID: 8300000, guid: fc8e26cd7ba85174cb9eca22b4e786c7, type: 3}
   - {fileID: 8300000, guid: 04804903f05f0dd4c90b42ea88bf416e, type: 3}
   cam: {fileID: 4881327129940512}
   weightAmmo: 0
+  gun: {fileID: 1151682133774204}
+--- !u!114 &114511701386122776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419296751901298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478a2083ad114a07d000fbfb8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: e9ba2083ad114a07d000fbfb8d76c639, type: 3}
+  blurAmount: 0.2
+  extraBlur: 0
+--- !u!114 &114815604689724122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419296751901298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.25
+  intensity: 0.56
+  blurSize: 1
+  blurIterations: 2
+  blurType: 0
+  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!114 &114856942208383794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -489,7 +495,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1033626203
+  randomSeed: -1578234420
   InitialModule:
     serializedVersion: 3
     enabled: 1
