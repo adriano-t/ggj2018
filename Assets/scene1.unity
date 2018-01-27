@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.24647538, g: 0.28234535, b: 0.3457032, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -151,6 +151,10 @@ Prefab:
     - target: {fileID: 4607321327475154, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585443196873978, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
@@ -477,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2679ebe5f47464888f83eaa66b80f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFloatingPointY: 0
 --- !u!65 &685166207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -542,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2679ebe5f47464888f83eaa66b80f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFloatingPointY: 0
 --- !u!4 &744220860 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4016607916717424, guid: 89ccd2835d07c514dbb2460aa53229d0,
@@ -673,6 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2679ebe5f47464888f83eaa66b80f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFloatingPointY: 0
 --- !u!65 &944789073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1138,6 +1145,10 @@ Prefab:
       propertyPath: m_Name
       value: crate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1585443196873978, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
   m_IsPrefabParent: 0
@@ -1271,6 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2679ebe5f47464888f83eaa66b80f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxFloatingPointY: 0
 --- !u!65 &1651466915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1348,6 +1360,10 @@ Prefab:
     - target: {fileID: 1585443196873978, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
       propertyPath: m_Name
       value: crate (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585443196873978, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
@@ -1465,6 +1481,10 @@ Prefab:
     - target: {fileID: 1585443196873978, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
       propertyPath: m_Name
       value: crate (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585443196873978, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3d2b550de65eac42b16e3d10e63ea8b, type: 2}

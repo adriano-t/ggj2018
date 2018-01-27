@@ -16,7 +16,7 @@ public class Grate : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "crate")
+        if (other.gameObject.tag == "crate" && grabbed)
         {
             StartCoroutine(ElevateCrate(other.gameObject.transform));
         }
@@ -28,7 +28,7 @@ public class Grate : MonoBehaviour
         Vector3 startPos = crate.position;
         Vector3 endPos = new Vector3 (transform.position.x, crate.position.y, transform.position.z);
         float t = 0;
-        while(t < 1 && !grabbed)
+        while(t < 1)
         {
             crate.position = Vector3.Lerp (startPos, endPos, t);
             t += Time.deltaTime;
@@ -51,20 +51,16 @@ public class Grate : MonoBehaviour
         {
             y = maxFloatingPointY;
         }
-        if(grabbed)
+        crate.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        Vector3 startPos = crate.position;
+        Vector3 endPos = new Vector3(crate.position.x, y, crate.position.z);
+        float t = 0;
+        while (t < 1)
         {
-            crate.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            Vector3 startPos = crate.position;
-            Vector3 endPos = new Vector3(crate.position.x, y, crate.position.z);
-            float t = 0;
-            while (t < 1)
-            {
-                crate.position = Vector3.Lerp(startPos, endPos, t);
-                t += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
+            crate.position = Vector3.Lerp(startPos, endPos, t);
+            t += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
 
-            }
         }
-        yield return null;
     }
 }
