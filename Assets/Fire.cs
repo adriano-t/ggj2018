@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DigitalRuby.PyroParticles;
 
 public class Fire : MonoBehaviour {
 
@@ -18,7 +17,7 @@ public class Fire : MonoBehaviour {
         fireHp -= 0.5f;
         if(fireHp==0)
         {
-            GetComponentInChildren<FireBaseScript>().End();
+            //GetComponentInChildren<FireBaseScript>().End();
         }
     }
 

@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
                 {
                     hitInfo.transform.Translate(Vector3.up * Time.deltaTime *2f);
                     weightAmmo += 0.01f;
-                    SetGunParticles (gun.transform.position, hitInfo.point);
+                    SetGunParticles (hitInfo.point, gun.transform.position);
                 }
             }
         }
@@ -209,7 +209,7 @@ public class PlayerController : MonoBehaviour
                 {
                     hitInfo.transform.Translate(Vector3.down * Time.deltaTime * 2f);
                     weightAmmo -= 0.01f;
-                    SetGunParticles (hitInfo.point, gun.transform.position);
+                    SetGunParticles (gun.transform.position, hitInfo.point);
                 }
             }
         }
