@@ -1,32 +1,19 @@
 fileFormatVersion: 2
-guid: 1311b52541053d8478fac1e216a5506e
-timeCreated: 1517011718
+guid: 21afd9393f4def946ac183b4d9b14b54
+timeCreated: 1517011701
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Object001
-    100004: Object002
-    100006: ZBrushPolyMesh3D
     400000: //RootNode
-    400002: Object001
-    400004: Object002
-    400006: ZBrushPolyMesh3D
     2100000: No Name
-    2100002: defaultMat
-    2300000: Object001
-    2300002: Object002
-    2300004: ZBrushPolyMesh3D
-    3300000: Object001
-    3300002: Object002
-    3300004: ZBrushPolyMesh3D
-    4300000: Object002
-    4300002: Object001
-    4300004: ZBrushPolyMesh3D
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Object001
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

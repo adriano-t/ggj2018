@@ -29,17 +29,15 @@ public class PlayerController : MonoBehaviour
     float bobbing = 0;
     float breathing = 0;
     bool crouch = false; 
-    float camCrouch = 0; 
-     
+    float camCrouch = 0;
+    private bool jump;
+
     void Awake ()
     {
         cam = GetComponentInChildren<Camera> ().transform;
         rb = GetComponent<Rigidbody> ();
         cc = GetComponent<CapsuleCollider> ();
-        var c = GetComponentInChildren<Renderer> ();
-        if (c)
-            c.enabled = false; 
-          
+       
         //sounds
         sndSourceSteps = gameObject.AddComponent<AudioSource> ();
         sndSourceSteps.clip = soundSteps[0];
@@ -172,13 +170,34 @@ public class PlayerController : MonoBehaviour
 
         cam.localPosition = new Vector3 (camLocalStart.x, camLocalStart.y + bobbingY + camCrouch + breathingY, camLocalStart.z);
 
-        
- 
+
+        if (Input.GetKeyDown (KeyCode.Space))
+        {
+            if (Physics.Raycast (transform.position, Vector3.down, 0.5f,Layers.Negate (Layers.MASK_PLAYER)))
+            {
+                jump = true;
+            }
+        }
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast (cam.position, cam.transform.forward, out hitInfo, 3.0f))
+        {
+            string tag = hitInfo.collider.tag;
+            if(tag == "weight")
+            {
+                //Da continuare qui
+            }
+        }
     }
      
     void FixedUpdate ()
     {
         MovePhysics (directionVector.normalized); 
+        if(jump)
+        {
+            jump = false; 
+            rb.AddForce (Vector3.up * 5.5f, ForceMode.VelocityChange);
+        }
     }
 
     void MovePhysics (Vector3 direction)
