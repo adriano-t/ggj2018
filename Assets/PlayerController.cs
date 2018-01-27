@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private bool jump;
 
     public GameObject gun;
+    private float jumpTime;
 
     void Awake()
     {
@@ -174,14 +175,15 @@ public class PlayerController : MonoBehaviour
         cam.localPosition = new Vector3(camLocalStart.x, camLocalStart.y + bobbingY + camCrouch + breathingY, camLocalStart.z);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpTime <= 0)
         {
-            /*if (Physics.Raycast (transform.position, Vector3.down, 0.5f,Layers.Negate (Layers.MASK_PLAYER)))
+            if (Physics.Raycast (transform.position + Vector3.up * 0.5f, Vector3.down, 1f,Layers.Negate (Layers.MASK_PLAYER)))
             {
                 jump = true;
-            }*/
-            jump = true;
+                jumpTime = 0.4f;
+            } 
         }
+        jumpTime -= Time.deltaTime;
 
         //leva peso
         RaycastHit hitInfo;
