@@ -7,7 +7,6 @@ public class Fire : MonoBehaviour
 
     public bool dead;
     public ParticleSystem p1;
-    public ParticleSystem p2;
 
     private void Update()
     {
@@ -29,8 +28,6 @@ public class Fire : MonoBehaviour
         }
         ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve(c);
         ParticleSystem.MainModule main = GetComponentInChildren<ParticleSystem>().main;
-        main.startLifetime = curve;
-        main = p2.main;
         main.startLifetime = curve;
 
     }

@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
         //leva peso
         RaycastHit hitInfo;
-        if (ammo < 1f && Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        if (ammo <= 1f && Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
         {
             string tag = hitInfo.collider.tag;
             if (tag == "crate")
@@ -207,6 +207,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (tag == "cisterna" && ammo > 0)
             {
+                Debug.Log ("caio");
                 hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
                 ammo -= 0.005f;
                 SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
@@ -234,7 +235,7 @@ public class PlayerController : MonoBehaviour
         {
             ps.gameObject.SetActive(false);
         }
-
+        ammo = Mathf.Clamp01 (ammo);
     }
 
     void SetGunParticles(Vector3 startPos, Vector3 endPos, Color color)
