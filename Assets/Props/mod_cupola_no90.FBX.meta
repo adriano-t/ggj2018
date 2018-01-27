@@ -1,15 +1,27 @@
 fileFormatVersion: 2
-guid: 4691d8660a36bfb44a7cd3f3cf0589bc
-timeCreated: 1517079876
+guid: 1923ff644e2c4ad4f8332832f2c6e376
+timeCreated: 1517091715
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Object012
+    100000: _cupola
+    100002: Cupola apribile
+    100004: //RootNode
+    100006: Pavimento
+    400000: _cupola
+    400002: Cupola apribile
+    400004: //RootNode
+    400006: Pavimento
+    2300000: _cupola
+    2300002: Cupola apribile
+    2300004: Pavimento
+    3300000: _cupola
+    3300002: Cupola apribile
+    3300004: Pavimento
+    4300000: Pavimento
+    4300002: Cupola apribile
+    4300004: _cupola
   externalObjects: {}
   materials:
     importMaterials: 0

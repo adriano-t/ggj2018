@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: b701443281f63994696348739ca6674d
-timeCreated: 1517079876
+guid: 6140bf4635f1b9248a769333ef154e28
+timeCreated: 1517089131
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Object002
+    100000: Albero
+    100002: //RootNode
+    100004: terriccio
+    400000: Albero
+    400002: //RootNode
+    400004: terriccio
+    2300000: Albero
+    2300002: terriccio
+    3300000: Albero
+    3300002: terriccio
+    4300000: Albero
+    4300002: terriccio
   externalObjects: {}
   materials:
     importMaterials: 0

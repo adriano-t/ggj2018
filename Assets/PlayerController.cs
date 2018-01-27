@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class PlayerController : MonoBehaviour
     public float bobbingSpeed = 1f;
 
     float bobbingSpeedMultiplyer = 1;
-    float speedMultiplyer = 1;
+    float speedMultiplyer = 1; 
+    public Image cursor;
+
 
     public ParticleSystem ps;
     //sounds
@@ -46,7 +49,6 @@ public class PlayerController : MonoBehaviour
         sndSourceSteps = gameObject.AddComponent<AudioSource>();
         sndSourceSteps.clip = soundSteps[0];
         sndSourceSteps.volume = 0.3f;
-
 
         camLocalStart = cam.localPosition;
 
@@ -185,11 +187,23 @@ public class PlayerController : MonoBehaviour
         }
         jumpTime -= Time.deltaTime;
 
-        //leva peso
         RaycastHit hitInfo;
-        if (ammo <= 1f && Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        bool raycast = Physics.Raycast (cam.position, cam.transform.forward, out hitInfo, 5f);
+        string tag = "";
+
+        if (raycast)
+            tag = hitInfo.collider.tag;
+
+        if(tag != "" && tag != "Untagged")
+        { 
+            cursor.rectTransform.localScale = Vector3.one * 0.06f;
+        }
+        else
+            cursor.rectTransform.localScale = Vector3.one * 0.04f;
+
+        //leva peso
+        if (ammo <= 1f && Input.GetMouseButton(0) && raycast)
         {
-            string tag = hitInfo.collider.tag;
             if (tag == "crate")
             {
                 if (hitInfo.transform.position.y < 6f)
@@ -217,9 +231,8 @@ public class PlayerController : MonoBehaviour
             }
         }
         //aggiungi peso 
-        else if (ammo >= 0.01 && Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
-        {
-            string tag = hitInfo.collider.tag;
+        else if (ammo >= 0.01 && Input.GetMouseButton(1) && raycast)
+        { 
             if (tag == "crate")
             {
                 if (hitInfo.transform.position.y > .5f)
@@ -240,7 +253,7 @@ public class PlayerController : MonoBehaviour
     void SetGunParticles(Vector3 startPos, Vector3 endPos, Color color)
     {
         if(startPos != gun.transform.position)
-        { 
+        {
             gunTop.material.SetColor("_EmissionColor",Color.Lerp (Color.black, color, ammo ));
         }
         else

@@ -356,6 +356,7 @@ MonoBehaviour:
   crouchSpeed: 2
   bobbingAmount: 0.3
   bobbingSpeed: 40
+  cursor: {fileID: 0}
   ps: {fileID: 198997560989639740}
   soundSteps:
   - {fileID: 8300000, guid: 91038164d02aabe4cafb35fbe218dea9, type: 3}
