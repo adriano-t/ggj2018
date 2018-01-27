@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 11108422ae941b445a7ab3760bdefe4a
-timeCreated: 1517016446
+guid: 26a431624be7b944aa4da70685e6fae5
+timeCreated: 1517061828
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: porta_dx
-    100004: porta_sx
     400000: //RootNode
-    400002: porta_dx
-    400004: porta_sx
-    2300000: porta_dx
-    2300002: porta_sx
-    3300000: porta_dx
-    3300002: porta_sx
-    4300000: porta_sx
-    4300002: porta_dx
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Vite
   externalObjects: {}
   materials:
     importMaterials: 0

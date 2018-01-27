@@ -22,8 +22,10 @@ public class Fire : MonoBehaviour {
                 float c=GetComponentInChildren<ParticleSystem>().main.startLifetime.constant;
                 c--;
 
-                ParticleSystem.MinMaxCurve m = new ParticleSystem.MinMaxCurve(c);
-                //GetComponentInChildren<ParticleSystem>().main.startLifetime = m;
+                ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve(c);
+                ParticleSystem.MainModule main = GetComponentInChildren<ParticleSystem> ().main;
+                main.startLifetime = curve;
+                
             }
         }
     }

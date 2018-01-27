@@ -1,19 +1,18 @@
 fileFormatVersion: 2
-guid: eada6d33af3d5ff41a19503706105851
-timeCreated: 1517010247
+guid: 11904d9fcc5036c4d8c15c60de4ef558
+timeCreated: 1517061807
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Object001
+    4300000: Vite
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,7 +65,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
