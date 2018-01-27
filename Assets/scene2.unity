@@ -694,11 +694,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114294880020182260, guid: d351ef1240e90c24290b733b9e5b941d,
         type: 2}
       propertyPath: cursor
       value: 
       objectReference: {fileID: 1284862056}
+=======
+    - target: {fileID: 1986182595666050, guid: d351ef1240e90c24290b733b9e5b941d, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+>>>>>>> 4dc715af1bc49f12a774e2eb8738bb63a1c77ca8
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d351ef1240e90c24290b733b9e5b941d, type: 2}
   m_IsPrefabParent: 0
@@ -1044,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1356234316
 MonoBehaviour:
   m_ObjectHideFlags: 0
