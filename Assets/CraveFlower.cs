@@ -14,14 +14,6 @@ public class CraveFlower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if(!transform.position.Equals(destinationPos))
-        {
-            transform.position = Vector3.MoveTowards(transform.position, destinationPos,Time.deltaTime);
-        }
-        else
-        {
-            destinationPos= new Vector3(transform.position.x, transform.position.y + offset*-1, transform.position.z);
-        }
+        transform.position = transform.position+(Vector3.up * Mathf.Sin(Time.frameCount*0.1f) * 0.005f);
 	}
 }
