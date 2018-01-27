@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour {
+public class Fire : MonoBehaviour
+{
 
-    public float fireHp = 100;
+    public bool dead;
+    public ParticleSystem p1;
+    public ParticleSystem p2;
 
     private void Update()
     {
@@ -13,21 +16,22 @@ public class Fire : MonoBehaviour {
 
     public void DecreaseFire()
     {
-        fireHp -= 1f;
-        if(fireHp==0)
+
+        //Diminuisce il particle system
+
+        float c = p1.main.startLifetime.constant;
+        c-=.002f;
+
+        if(c<=0.23)
         {
-            //Diminuisce il particle system
-            if(fireHp%10==0)
-            {
-                float c=GetComponentInChildren<ParticleSystem>().main.startLifetime.constant;
-                c--;
-
-                ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve(c);
-                ParticleSystem.MainModule main = GetComponentInChildren<ParticleSystem> ().main;
-                main.startLifetime = curve;
-                
-            }
+            dead = true;
+            return;
         }
-    }
+        ParticleSystem.MinMaxCurve curve = new ParticleSystem.MinMaxCurve(c);
+        ParticleSystem.MainModule main = GetComponentInChildren<ParticleSystem>().main;
+        main.startLifetime = curve;
+        main = p2.main;
+        main.startLifetime = curve;
 
+    }
 }

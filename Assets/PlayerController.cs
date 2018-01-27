@@ -221,7 +221,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f, fireLayerMask))
         {
             string tag = hitInfo.collider.tag;
-            if (hitInfo.transform.GetComponent<Fire>().fireHp > 0 && tag == "fire")
+            if ( tag == "fire" && !hitInfo.transform.GetComponent<Fire>().dead)
             {
                 hitInfo.transform.GetComponent<Fire>().DecreaseFire();
                 fireAmmo++;
@@ -243,8 +243,6 @@ public class PlayerController : MonoBehaviour
         ps.gameObject.SetActive (true);
         ps.transform.position = startPos;
         ps.transform.forward = (endPos - startPos).normalized;
-
-        Debug.Log (ps.transform.forward);
     }
      
     void FixedUpdate ()
