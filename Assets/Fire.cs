@@ -22,7 +22,7 @@ public class Fire : MonoBehaviour
         float c = p1.main.startLifetime.constant;
         c-=.002f;
 
-        if(c<=0.3)
+        if(c<=0.23f)
         {
             dead = true;
             return;
