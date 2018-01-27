@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class Grate : MonoBehaviour
 {
+
+    bool grab;
+
     private void OnTriggerEnter (Collider other)
     { 
-        if(other.gameObject.tag == "crate")
+        if(other.gameObject.tag == "crate" && !grab)
         {
             StartCoroutine (RoutineAlignCrate (other.gameObject.transform));
+            grab = true;
         }
     }
 

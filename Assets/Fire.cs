@@ -20,7 +20,7 @@ public class Fire : MonoBehaviour
         //Diminuisce il particle system
 
         float c = p1.main.startLifetime.constant;
-        c-=.002f;
+        c-=.004f;
 
         if(c<=0.23f)
         {

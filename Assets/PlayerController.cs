@@ -23,8 +23,7 @@ public class PlayerController : MonoBehaviour
     public Transform cam;
     private Rigidbody rb;
     private CapsuleCollider cc;
-    public float weightAmmo = 0f;
-    public float fireAmmo = 0f;
+    public float ammo = 0f;
 
     Vector3 camLocalStart;
     Vector3 directionVector;
@@ -186,28 +185,28 @@ public class PlayerController : MonoBehaviour
 
         //leva peso
         RaycastHit hitInfo;
-        if (Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        if (ammo < 1f && Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
         {
             string tag = hitInfo.collider.tag;
             if (tag == "crate")
             {
-                if (hitInfo.transform.position.y < 4.5f)
+                if (hitInfo.transform.position.y < 6f)
                 {
-                    hitInfo.transform.Translate(Vector3.up * Time.deltaTime * 2f);
-                    weightAmmo += 0.01f;
+                    hitInfo.transform.Translate(Vector3.up * Time.deltaTime);
+                    ammo += 1f * Time.deltaTime;
                     SetGunParticles(hitInfo.point, gun.transform.position, Color.blue);
                 }
             }
             else if (tag == "fire" && !hitInfo.transform.GetComponent<Fire>().dead)
             {
                 hitInfo.transform.GetComponent<Fire>().DecreaseFire();
-                fireAmmo += 0.5f;
+                ammo += 0.005f;
                 SetGunParticles(hitInfo.point, gun.transform.position, Color.red);
             }
-            else if (tag == "cisterna" && fireAmmo > 0)
+            else if (tag == "cisterna" && ammo > 0)
             {
                 hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
-                fireAmmo -= 0.5f;
+                ammo -= 0.005f;
                 SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
             }
             else
@@ -216,15 +215,15 @@ public class PlayerController : MonoBehaviour
             }
         }
         //aggiungi peso 
-        else if (Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        else if (ammo >= 0.01 && Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
         {
             string tag = hitInfo.collider.tag;
             if (tag == "crate")
             {
-                if (hitInfo.transform.position.y > 0.5f && weightAmmo > 0)
+                if (hitInfo.transform.position.y > .5f)
                 {
-                    hitInfo.transform.Translate(Vector3.down * Time.deltaTime * 2f);
-                    weightAmmo -= 0.01f;
+                    hitInfo.transform.Translate(Vector3.down * Time.deltaTime);
+                    ammo -= 1*Time.deltaTime;
                     SetGunParticles(gun.transform.position, hitInfo.point, Color.blue);
                 }
             }
