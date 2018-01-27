@@ -14,7 +14,7 @@ public class Cisterna : MonoBehaviour {
     public void IncreaseEmission()
     {
         Color current = GetComponent<Renderer>().material.GetColor("_EmissionColor");
-        Color nextColor = Color.Lerp(current, finalColor,Time.deltaTime*0.25f);
+        Color nextColor = Color.Lerp(current, finalColor,Time.deltaTime*0.5f);
         glow.intensity = Mathf.Lerp(glow.intensity, 5f,Time.deltaTime*0.25f);
         GetComponent<Renderer>().material.SetColor("_EmissionColor", nextColor);
     }
