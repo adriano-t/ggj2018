@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    Transform player;
+    public Transform player;
     Vector3 startPos;
     public Vector3 endPos;
     bool open;
@@ -14,25 +14,26 @@ public class Door : MonoBehaviour
         startPos = transform.position;
     }
     private void Update ()
-    {
-        return;
-        if(!open && Vector3.Distance(player.transform.position, transform.position) < 2.0f)
-        {
+    { 
+        if(!open && Vector3.Distance(player.position, transform.position) < 5.0f)
+        { 
             Open ();
         }
-        else if(open && Vector3.Distance (player.transform.position, transform.position) > 2.0f)
-        {
+        else if(open && Vector3.Distance (player.position, transform.position) > 5.0f)
+        { 
             Close ();
         }
     }
 
     public void Open()
     {
+        open = true;
         StartCoroutine (RoutineOpenClose (startPos + endPos));
     }
 
     public void Close()
     {
+        open = false;
         StartCoroutine (RoutineOpenClose (startPos));
     }
 
@@ -46,5 +47,6 @@ public class Door : MonoBehaviour
             t += Time.deltaTime * 2;
             yield return new WaitForEndOfFrame ();
         }
+        transform.position = targetPos;
     }
 }

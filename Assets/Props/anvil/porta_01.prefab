@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33261486318158234}
   - component: {fileID: 23712832278003244}
   - component: {fileID: 65756145172116016}
+  - component: {fileID: 114025256934727172}
   m_Layer: 0
   m_Name: porta_anta_dx
   m_TagString: Untagged
@@ -55,6 +56,7 @@ GameObject:
   - component: {fileID: 33063354837073814}
   - component: {fileID: 23848449042054284}
   - component: {fileID: 65889638883478638}
+  - component: {fileID: 114062212391589386}
   m_Layer: 0
   m_Name: porta_anta_sx
   m_TagString: Untagged
@@ -97,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226041983550922}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00000003240501, y: -0.00000005008762, z: 0.0000026207692}
+  m_LocalPosition: {x: 0, y: -0.00000005008762, z: 0.0000026207692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4158115480127854}
@@ -209,3 +211,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.4191658, y: 4, z: 1.3701953}
   m_Center: {x: -1.19215, y: 0.00000011920929, z: 0.0000008940697}
+--- !u!114 &114025256934727172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226041983550922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30381fbe404ac3d48b8ed87c6a917823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  endPos: {x: 2.3, y: 0, z: 0}
+--- !u!114 &114062212391589386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943940799928894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30381fbe404ac3d48b8ed87c6a917823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  endPos: {x: -2.3, y: 0, z: 0}
