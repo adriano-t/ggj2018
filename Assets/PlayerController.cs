@@ -206,6 +206,8 @@ public class PlayerController : MonoBehaviour
             else if (tag == "cisterna" && fireAmmo > 0)
             {
                 hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
+                fireAmmo -= 0.5f;
+                SetGunParticles(gun.transform.position, hitInfo.point);
             }
             else
             {

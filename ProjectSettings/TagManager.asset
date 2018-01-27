@@ -7,6 +7,7 @@ TagManager:
   - crate
   - weight
   - fire
+  - cisterna
   layers:
   - Default
   - TransparentFX
