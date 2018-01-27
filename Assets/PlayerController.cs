@@ -32,12 +32,14 @@ public class PlayerController : MonoBehaviour
     float camCrouch = 0;
     private bool jump;
 
+    LayerMask crateLayerMask;
+
     void Awake ()
     {
         cam = GetComponentInChildren<Camera> ().transform;
         rb = GetComponent<Rigidbody> ();
         cc = GetComponent<CapsuleCollider> ();
-       
+        crateLayerMask = LayerMask.GetMask("crate");
         //sounds
         sndSourceSteps = gameObject.AddComponent<AudioSource> ();
         sndSourceSteps.clip = soundSteps[0];
@@ -173,19 +175,33 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown (KeyCode.Space))
         {
-            if (Physics.Raycast (transform.position, Vector3.down, 0.5f,Layers.Negate (Layers.MASK_PLAYER)))
+            /*if (Physics.Raycast (transform.position, Vector3.down, 0.5f,Layers.Negate (Layers.MASK_PLAYER)))
             {
                 jump = true;
-            }
+            }*/
+            jump = true;
         }
 
         RaycastHit hitInfo;
-        if (Physics.Raycast (cam.position, cam.transform.forward, out hitInfo, 3.0f))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast (cam.position, cam.transform.forward, out hitInfo, 5f,crateLayerMask))
         {
             string tag = hitInfo.collider.tag;
-            if(tag == "weight")
+            if(tag == "crate")
             {
+                Color currentColor = hitInfo.transform.GetComponent<Renderer>().material.color;
                 //Da continuare qui
+                hitInfo.transform.GetComponent<Renderer>().material.color = Color.Lerp(currentColor, Color.red, 1f);
+            }
+        }
+
+        if (Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f,crateLayerMask))
+        {
+            string tag = hitInfo.collider.tag;
+            if (tag == "crate")
+            {
+                Color currentColor = hitInfo.transform.GetComponent<Renderer>().material.color;
+                //Da continuare qui
+                hitInfo.transform.GetComponent<Renderer>().material.color = Color.Lerp(currentColor, Color.white, 1f);
             }
         }
     }
