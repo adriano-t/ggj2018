@@ -207,7 +207,6 @@ public class PlayerController : MonoBehaviour
             }
             else if (tag == "cisterna" && ammo > 0)
             {
-                Debug.Log ("caio");
                 hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
                 ammo -= 0.005f;
                 SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
