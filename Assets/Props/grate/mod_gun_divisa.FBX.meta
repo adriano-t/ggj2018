@@ -1,14 +1,22 @@
 fileFormatVersion: 2
-guid: a7d5b1aa25a28f944962d0d9ff403ccb
-timeCreated: 1517047055
+guid: dee317d0f2461654b833db0609272add
+timeCreated: 1517049050
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: gun
+    100002: gun-top
+    100004: //RootNode
+    400000: gun
+    400002: gun-top
+    400004: //RootNode
+    2300000: gun
+    2300002: gun-top
+    3300000: gun
+    3300002: gun-top
+    4300000: gun
+    4300002: gun-top
   externalObjects: {}
   materials:
     importMaterials: 0
