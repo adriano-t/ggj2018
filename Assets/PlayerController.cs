@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public Transform cam;
     private Rigidbody rb;
     private CapsuleCollider cc;
+    public float weightAmmo = 0f;
     
     Vector3 camLocalStart;
     Vector3 directionVector;
@@ -182,26 +183,42 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
+        //leva peso
         RaycastHit hitInfo;
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast (cam.position, cam.transform.forward, out hitInfo, 5f,crateLayerMask))
+        if (Input.GetMouseButton(1) && Physics.Raycast (cam.position, cam.transform.forward, out hitInfo, 5f,crateLayerMask))
         {
             string tag = hitInfo.collider.tag;
             if(tag == "crate")
             {
-                Color currentColor = hitInfo.transform.GetComponent<Renderer>().material.color;
-                //Da continuare qui
-                hitInfo.transform.GetComponent<Renderer>().material.color = Color.Lerp(currentColor, Color.red, 1f);
+                if(hitInfo.transform.parent.transform.position.y<4.5f)
+                {
+                    hitInfo.transform.parent.transform.Translate(Vector3.up * Time.deltaTime *2f);
+                    weightAmmo += 0.01f;
+                }
             }
         }
-
-        if (Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f,crateLayerMask))
+        //aggiungi peso
+        if (Input.GetMouseButton(0) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f, crateLayerMask))
         {
             string tag = hitInfo.collider.tag;
             if (tag == "crate")
             {
-                Color currentColor = hitInfo.transform.GetComponent<Renderer>().material.color;
-                //Da continuare qui
-                hitInfo.transform.GetComponent<Renderer>().material.color = Color.Lerp(currentColor, Color.white, 1f);
+                if (hitInfo.transform.parent.transform.position.y > 1f && weightAmmo>0)
+                {
+                    hitInfo.transform.parent.transform.Translate(Vector3.down * Time.deltaTime * 2f);
+                    weightAmmo -= 0.01f;
+                }
+            }
+        }
+
+
+        if (Input.GetMouseButton(1) && Physics.Raycast(cam.position, cam.transform.forward, out hitInfo, 5f))
+        {
+            string tag = hitInfo.collider.tag;
+            if (tag == "weight")
+            {
+                if (weightAmmo < 1f)
+                    weightAmmo += 0.01f;
             }
         }
     }
