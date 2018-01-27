@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
 
         if(tag != "" && tag != "Untagged")
         { 
-            cursor.rectTransform.localScale = Vector3.one * 0.06f;
+            cursor.rectTransform.localScale = Vector3.one * 0.08f;
         }
         else
             cursor.rectTransform.localScale = Vector3.one * 0.04f;
@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
         //leva peso
         if (ammo <= 1f && Input.GetMouseButton(0) && raycast)
         {
-            if (tag == "crate")
+            if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower>().floating)
             {
                 if (hitInfo.transform.position.y < 6f)
                 {
@@ -219,12 +219,6 @@ public class PlayerController : MonoBehaviour
                 ammo += 0.005f;
                 SetGunParticles(hitInfo.point, gun.transform.position, Color.red);
             }
-            else if (tag == "cisterna" && ammo > 0)
-            {
-                hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
-                ammo -= 0.005f;
-                SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
-            }
             else
             {
                 ps.gameObject.SetActive(false);
@@ -233,7 +227,7 @@ public class PlayerController : MonoBehaviour
         //aggiungi peso 
         else if (ammo >= 0.01 && Input.GetMouseButton(1) && raycast)
         { 
-            if (tag == "crate")
+            if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower>().floating)
             {
                 if (hitInfo.transform.position.y > .5f)
                 {
@@ -242,12 +236,17 @@ public class PlayerController : MonoBehaviour
                     SetGunParticles(gun.transform.position, hitInfo.point, Color.blue);
                 }
             }
+            else if (tag == "cisterna" && ammo > 0)
+            {
+                hitInfo.transform.GetComponent<Cisterna>().IncreaseEmission();
+                ammo -= 0.005f;
+                SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
+            }
         }
         else
         {
             ps.gameObject.SetActive(false);
         }
-        ammo = Mathf.Clamp01 (ammo);
     }
 
     void SetGunParticles(Vector3 startPos, Vector3 endPos, Color color)

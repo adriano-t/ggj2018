@@ -46,6 +46,8 @@ public class Grate : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+
         crate.GetComponent<CraveFlower>().enabled = true;
+        crate.GetComponent<CraveFlower>().floating = true;
     }
 }
