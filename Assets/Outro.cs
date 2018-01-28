@@ -7,7 +7,9 @@ public class Outro : MonoBehaviour {
 
     public GameObject spotLight;
     public GameObject foglie;
-    public GameObject whiteBkg;
+    public RawImage whiteBkg;
+    public RawImage blackBkg;
+
     public Text finalText;
     public AudioSource source;
 
@@ -19,33 +21,44 @@ public class Outro : MonoBehaviour {
     IEnumerator OutroRoutine()
     {
         spotLight.SetActive(true);
+        //fadeout
+        float t = 0;
+        while (t < 1)
+        {
+            whiteBkg.color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
+            t += Time.deltaTime*.3f;
+        }
+
+
         foglie.SetActive(true);
-        yield return new WaitForSeconds(3f);
-
-        Color c = new Color(0, 0, 0, 0);
-
-        while(c.a<255)
+        yield return new WaitForSeconds(2f);
+        t = 0;
+        while (t < 1)
         {
-            c.a += 1;
-            whiteBkg.GetComponent<RawImage>().color = c;
-            yield return new WaitForSeconds(0.1f);
+            whiteBkg.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, t));
+            t += Time.deltaTime*.3f;
         }
 
-        c = new Color(finalText.color.r, finalText.color.g, finalText.color.b, 0);
+        yield return new WaitForSeconds(5f);
 
-        while(c.a<255)
+        t = 0;
+        while (t < 1)
         {
-            c.a += 1;
-            finalText.color = c;
-            yield return new WaitForSeconds(0.1f);
+            blackBkg.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, t));
+            finalText.color = new Color(0, 0, 0, Mathf.Lerp( 0,1, t));
+            t += Time.deltaTime * .3f;
         }
+
+        if (source)
+            source.Play();
 
         while (!Input.GetKey(KeyCode.Return) && !Input.GetMouseButton(0))
         {
             yield return new WaitForSeconds(0.01f);
         }
 
-        if (source)
-            source.Play();
+        blackBkg.gameObject.SetActive(false);
+        finalText.gameObject.SetActive(false);
+
     }
 }
