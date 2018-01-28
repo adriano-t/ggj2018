@@ -5370,6 +5370,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82868146426688448, guid: 40d0696df6edf854b9f40c7d6bdaeca0,
+        type: 2}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82868146426688448, guid: 40d0696df6edf854b9f40c7d6bdaeca0,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535628934775754, guid: 40d0696df6edf854b9f40c7d6bdaeca0,
+        type: 2}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d3185858a1bddfa4ca0b14f5f981b841, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40d0696df6edf854b9f40c7d6bdaeca0, type: 2}
   m_IsPrefabParent: 0
