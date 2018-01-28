@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     private float jumpTime;
+    private bool emitting;
 
     void Awake()
     {
@@ -231,21 +232,16 @@ public class PlayerController : MonoBehaviour
             }
             else if (tag == "light")
             { 
-                if (hitInfo.transform.GetComponent<Light>().intensity >= 0.002f)
+                if (hitInfo.transform.GetComponent<Light>().intensity >= 0.005f)
                 {
-                    ammo += 0.002f;
-                    hitInfo.transform.GetComponent<Light>().intensity -= 0.002f;
+                    ammo += 0.005f;
+                    hitInfo.transform.GetComponent<Light>().intensity -= 0.005f;
                     hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.black, Color.white,
                         hitInfo.transform.GetComponent<Light> ().intensity));
 
                     SetGunParticles (hitInfo.point, gun.transform.position, Color.Lerp(Color.white,Color.yellow,0.25f));
                 }
-
-
-            }
-            else
-            {
-                ps.gameObject.SetActive(false);
+                 
             }
         }
         //spara 
@@ -262,10 +258,10 @@ public class PlayerController : MonoBehaviour
             }
             else if (tag == "light")
             { 
-                if(hitInfo.transform.GetComponent<Light>().intensity <= (1f - 0.002f))
+                if(hitInfo.transform.GetComponent<Light>().intensity <= (1f - 0.005f))
                 {
-                    ammo -= 0.002f;
-                    hitInfo.transform.GetComponent<Light>().intensity += 0.002f;
+                    ammo -= 0.005f;
+                    hitInfo.transform.GetComponent<Light>().intensity += 0.005f;
 
                     hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.black, Color.white,
                         hitInfo.transform.GetComponent<Light> ().intensity));
@@ -281,14 +277,17 @@ public class PlayerController : MonoBehaviour
                 SetGunParticles(gun.transform.position, hitInfo.point, Color.red);
             }
         }
-        else
+
+        if(!emitting)
         {
             ps.gameObject.SetActive(false);
         }
+        emitting = false;
     }
 
     void SetGunParticles(Vector3 startPos, Vector3 endPos, Color color)
     {
+        emitting = true;
         if(startPos != gun.transform.position)
         {
             gunTop.material.SetColor("_EmissionColor",Color.Lerp (Color.black, color, ammo ));
