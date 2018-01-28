@@ -8,11 +8,6 @@ public class Fire : MonoBehaviour
     public bool dead;
     public ParticleSystem p1;
 
-    private void Update()
-    {
-
-    }
-
     public void DecreaseFire()
     {
 
@@ -21,7 +16,7 @@ public class Fire : MonoBehaviour
         float c = p1.main.startLifetime.constant;
         c-=.004f;
 
-        if(c<=0.23f)
+        if(c<=0.2f)
         {
             dead = true;
             return;

@@ -5,6 +5,7 @@ public class Grate : MonoBehaviour
 {
 
     bool grab;
+    public static bool active;
 
     private void OnTriggerEnter (Collider other)
     { 
@@ -15,12 +16,12 @@ public class Grate : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        /*if (other.gameObject.tag == "crate" && grabbed)
+        if (active)
         {
-            StartCoroutine(ElevateCrate(other.gameObject.transform));
-        }*/
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     IEnumerator RoutineAlignCrate (Transform crate)

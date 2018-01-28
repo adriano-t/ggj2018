@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CraveFlower : MonoBehaviour {
 
+
     public bool floating;
 	// Update is called once per frame
 	void Update () {
