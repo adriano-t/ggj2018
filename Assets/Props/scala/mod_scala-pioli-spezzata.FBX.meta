@@ -1,28 +1,21 @@
 fileFormatVersion: 2
-guid: 4de4ef90845ca6f46aac512b5a740e7d
-timeCreated: 1517096075
+guid: 04859ee18946b244db50ab58a2d5420c
+timeCreated: 1517098092
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: ' 1'
-    100002: Box004
-    100004: scala a pioli
-    100006: //RootNode
-    100008: scala_top
+    100002: //RootNode
+    100004: scala_top
     400000: ' 1'
-    400002: Box004
-    400004: scala a pioli
-    400006: //RootNode
-    400008: scala_top
+    400002: //RootNode
+    400004: scala_top
     2300000: ' 1'
-    2300002: Box004
-    2300004: scala_top
+    2300002: scala_top
     3300000: ' 1'
-    3300002: Box004
-    3300004: scala_top
-    4300000: Box004
-    4300002: scala_top
+    3300002: scala_top
+    4300000: scala_top
   externalObjects: {}
   materials:
     importMaterials: 0
