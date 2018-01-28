@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour
 {
-    RawImage background;
-    Text text;
+    public RawImage background;
+    public Text text;
     AudioSource source;
     void Start ()
     {
+        source = GetComponent<AudioSource>();
         StartCoroutine (Routine ());
 	}
     IEnumerator Routine()
@@ -30,5 +31,7 @@ public class IntroManager : MonoBehaviour
             text.color = new Color (0, 0, 0, Mathf.Lerp (1, 0, t));
             t += Time.deltaTime;
         }
+
+        source.Stop();
     }
 }

@@ -6,7 +6,7 @@ public class Generator : MonoBehaviour
 {
     public AudioClip clip;
     bool working;
-    GameObject leva;
+    public GameObject leva;
 
     void Update()
     {

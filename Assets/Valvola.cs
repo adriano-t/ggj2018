@@ -5,6 +5,7 @@ using UnityEngine;
 public class Valvola : MonoBehaviour {
     public CraveFlower[] crates;
     public GameObject ball;
+    public PlayerController pC;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +20,7 @@ public class Valvola : MonoBehaviour {
             }
             GetComponent<AudioPlayer>().PlayClip();
             Grate.Kill (); //don't do this in your lief (sono le 2:01 e manca poco alla consegna)
+            pC.ResetWeapon();
             ball.SetActive(true);
         }
 

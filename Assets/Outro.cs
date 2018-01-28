@@ -11,10 +11,11 @@ public class Outro : MonoBehaviour {
     public RawImage blackBkg;
 
     public Text finalText;
-    public AudioSource source;
+    AudioSource source;
 
     private void OnEnable()
     {
+        source = GetComponent<AudioSource>();
         StartCoroutine(OutroRoutine());
     }
 
@@ -59,6 +60,6 @@ public class Outro : MonoBehaviour {
 
         blackBkg.gameObject.SetActive(false);
         finalText.gameObject.SetActive(false);
-
+       
     }
 }

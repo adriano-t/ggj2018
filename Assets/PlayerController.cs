@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
     }
 
     
+    public void ResetWeapon()
+    {
+        ammo = 0;
+    }
 
     void Update()
     {
