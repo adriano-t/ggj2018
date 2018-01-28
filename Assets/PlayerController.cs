@@ -192,7 +192,17 @@ public class PlayerController : MonoBehaviour
         string tag = "";
 
         if (raycast)
+        {
             tag = hitInfo.collider.tag;
+
+            if (Input.GetMouseButtonDown (0))
+            {
+                if (tag == "lever")
+                {
+                    hitInfo.transform.gameObject.GetComponent<Leva> ().Open ();
+                }
+            }
+        }
 
         if(tag != "" && tag != "Untagged")
         { 
@@ -200,9 +210,9 @@ public class PlayerController : MonoBehaviour
         }
         else
             cursor.rectTransform.localScale = Vector3.one * 0.04f;
-
-        //leva peso
-        if (ammo <= 1f && Input.GetMouseButton(0) && raycast)
+        
+        //assorbi
+        if (ammo <= 1f && Input.GetMouseButton(1) && raycast)
         {
             if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower>().floating)
             {
@@ -220,14 +230,13 @@ public class PlayerController : MonoBehaviour
                 SetGunParticles(hitInfo.point, gun.transform.position, Color.red);
             }
             else if (tag == "light")
-            {
-                //TODO
-
+            { 
                 if (hitInfo.transform.GetComponent<Light>().intensity >= 0.002f)
                 {
                     ammo += 0.002f;
                     hitInfo.transform.GetComponent<Light>().intensity -= 0.002f;
-                    hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.white, Color.black, ammo));
+                    hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.black, Color.white,
+                        hitInfo.transform.GetComponent<Light> ().intensity));
 
                     SetGunParticles (hitInfo.point, gun.transform.position, Color.Lerp(Color.white,Color.yellow,0.25f));
                 }
@@ -239,8 +248,8 @@ public class PlayerController : MonoBehaviour
                 ps.gameObject.SetActive(false);
             }
         }
-        //aggiungi peso 
-        else if (ammo >= 0.01 && Input.GetMouseButton(1) && raycast)
+        //spara 
+        else if (ammo >= 0.01 && Input.GetMouseButton(0) && raycast)
         {
             if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower> ().floating)
             {
@@ -252,15 +261,14 @@ public class PlayerController : MonoBehaviour
                 }
             }
             else if (tag == "light")
-            {
-                //TODO
-
-                if(hitInfo.transform.GetComponent<Light>().intensity<1f)
+            { 
+                if(hitInfo.transform.GetComponent<Light>().intensity <= (1f - 0.002f))
                 {
                     ammo -= 0.002f;
                     hitInfo.transform.GetComponent<Light>().intensity += 0.002f;
 
-                    hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.white, Color.black, ammo));
+                    hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.black, Color.white,
+                        hitInfo.transform.GetComponent<Light> ().intensity));
                     SetGunParticles (gun.transform.position, hitInfo.point, Color.Lerp(Color.white, Color.yellow, 0.25f));
                 }
 
