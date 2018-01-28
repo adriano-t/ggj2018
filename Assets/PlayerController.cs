@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
             bobbingY = (Mathf.Cos(bobbing * Mathf.PI / 180f) * bobbingAmount) / (7f - ratio);
             bobbing += (rbSpeed * (5f - ratio)) * bobbingSpeed * Time.deltaTime * bobbingSpeedMultiplyer;
-            if (bobbingY < 0)
+            if (bobbingY < 0  && false)
             {
                 if (soundStepsCanPlay)
                 {

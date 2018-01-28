@@ -18,6 +18,7 @@ public class Leva : MonoBehaviour
 
     IEnumerator RoutineOpen()
     {
+        activated = true;
         float t = 0;
         Vector3 startRot = transform.localEulerAngles;
         Vector3 endRot = new Vector3 (startRot.x, startRot.y, startRot.z - 40);
@@ -39,7 +40,7 @@ public class Leva : MonoBehaviour
                 float angle = piece.localEulerAngles.z;
                 piece.localPosition += new Vector3 (Mathf.Cos (Mathf.Deg2Rad * (angle + 10)), Mathf.Sin (Mathf.Deg2Rad * (angle + 10)), 0)*0.01f;
             }
-            t += Time.deltaTime * 0.01f;
+            t += Time.deltaTime * 0.1f;
             yield return new WaitForEndOfFrame ();
         }
 

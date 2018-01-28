@@ -28,6 +28,7 @@ public class Outro : MonoBehaviour {
         {
             whiteBkg.color = new Color(1, 1, 1, Mathf.Lerp(0, 1, t));
             t += Time.deltaTime*.3f;
+            yield return new WaitForEndOfFrame ();
         }
 
 
@@ -38,6 +39,7 @@ public class Outro : MonoBehaviour {
         {
             whiteBkg.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, t));
             t += Time.deltaTime*.3f;
+            yield return new WaitForEndOfFrame ();
         }
 
         yield return new WaitForSeconds(5f);
@@ -45,9 +47,10 @@ public class Outro : MonoBehaviour {
         t = 0;
         while (t < 1)
         {
-            blackBkg.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, t));
-            finalText.color = new Color(0, 0, 0, Mathf.Lerp( 0,1, t));
+            blackBkg.color = new Color(0f, 0f, 0f, Mathf.Lerp(0f, 1f, t));
+            finalText.color = new Color(1f, 1f, 1f, Mathf.Lerp( 0f, 1f, t));
             t += Time.deltaTime * .3f;
+            yield return new WaitForEndOfFrame ();
         }
 
         if (source)
