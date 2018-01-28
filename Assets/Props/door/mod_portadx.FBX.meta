@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: 3264576334be65b45aea1dd3b270f8fa
-timeCreated: 1517132687
+guid: 7d0d7d83cc259ef4390b2b66d1d6cf50
+timeCreated: 1517143212
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: porta_dx
-    100004: porta_sx
     400000: //RootNode
-    400002: porta_dx
-    400004: porta_sx
-    2300000: porta_dx
-    2300002: porta_sx
-    3300000: porta_dx
-    3300002: porta_sx
-    4300000: porta_sx
-    4300002: porta_dx
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Door-dx
   externalObjects: {}
   materials:
     importMaterials: 0
