@@ -7,6 +7,7 @@ public class CraveFlower : MonoBehaviour {
     public bool floating;
 	// Update is called once per frame
 	void Update () {
-        transform.position = transform.position+(Vector3.up * Mathf.Sin(Time.frameCount*0.1f) * 0.005f);
+        if(floating)
+            transform.position = transform.position+(Vector3.up * Mathf.Sin(Time.frameCount*0.1f) * 0.005f);
 	}
 }

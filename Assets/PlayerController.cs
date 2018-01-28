@@ -226,15 +226,23 @@ public class PlayerController : MonoBehaviour
         }
         //aggiungi peso 
         else if (ammo >= 0.01 && Input.GetMouseButton(1) && raycast)
-        { 
-            if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower>().floating)
+        {
+            if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower> ().floating)
             {
                 if (hitInfo.transform.position.y > .5f)
                 {
-                    hitInfo.transform.Translate(Vector3.down * Time.deltaTime);
-                    ammo -= 1*Time.deltaTime;
-                    SetGunParticles(gun.transform.position, hitInfo.point, Color.blue);
+                    hitInfo.transform.Translate (Vector3.down * Time.deltaTime);
+                    ammo -= 1 * Time.deltaTime;
+                    SetGunParticles (gun.transform.position, hitInfo.point, Color.blue);
                 }
+            }
+            else if (tag == "light")
+            {
+                //TODO
+                     hitInfo.transform.Translate (Vector3.down * Time.deltaTime);
+                    ammo -= 1 * Time.deltaTime;
+                    SetGunParticles (gun.transform.position, hitInfo.point, Color.blue);
+                
             }
             else if (tag == "cisterna" && ammo > 0)
             {
