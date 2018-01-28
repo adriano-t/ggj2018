@@ -15,6 +15,7 @@ public class Valvola : MonoBehaviour {
  
                 crate.GetComponent<Rigidbody> ().isKinematic = false;
             }
+            GetComponent<AudioPlayer>().PlayClip();
             Grate.Kill (); //don't do this in your lief (sono le 2:01 e manca poco alla consegna)
         }
 

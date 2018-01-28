@@ -1059,11 +1059,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114253192310098330, guid: 79dcb3a7c98f51c42888e876f4e3d39d,
-        type: 2}
-      propertyPath: crates.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4700406850696638, guid: 79dcb3a7c98f51c42888e876f4e3d39d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.48
@@ -1096,10 +1091,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4700406850696638, guid: 79dcb3a7c98f51c42888e876f4e3d39d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 114253192310098330, guid: 79dcb3a7c98f51c42888e876f4e3d39d,
         type: 2}
       propertyPath: crates.Array.data[0]
@@ -1120,6 +1111,11 @@ Prefab:
       propertyPath: crates.Array.data[3]
       value: 
       objectReference: {fileID: 2061601598}
+    - target: {fileID: 82827307937476268, guid: 79dcb3a7c98f51c42888e876f4e3d39d,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79dcb3a7c98f51c42888e876f4e3d39d, type: 2}
   m_IsPrefabParent: 0
@@ -5261,6 +5257,11 @@ Prefab:
     - target: {fileID: 4016607916717424, guid: 89ccd2835d07c514dbb2460aa53229d0, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 82600527296451294, guid: 89ccd2835d07c514dbb2460aa53229d0,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89ccd2835d07c514dbb2460aa53229d0, type: 2}
