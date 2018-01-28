@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private float jumpTime;
     private bool emitting;
 
+
     void Awake()
     {
         cam = GetComponentInChildren<Camera>().transform;
@@ -58,9 +59,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
     }
 
+    
 
     void Update()
     {
@@ -180,7 +181,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpTime <= 0)
         {
-            if (Physics.Raycast (transform.position + Vector3.up * 0.5f, Vector3.down, 1f,Layers.Negate (Layers.MASK_PLAYER)))
+            if (Physics.Raycast (transform.position + Vector3.up * 0.7f, Vector3.down, 1f,Layers.Negate (Layers.MASK_PLAYER)))
             {
                 jump = true;
                 jumpTime = 0.4f;
@@ -278,6 +279,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if(!emitting)
         {
             ps.gameObject.SetActive(false);
@@ -310,7 +316,7 @@ public class PlayerController : MonoBehaviour
         if (jump)
         {
             jump = false;
-            rb.AddForce(Vector3.up * 5.5f, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 6f, ForceMode.VelocityChange);
         }
     }
 
