@@ -2279,6 +2279,16 @@ Prefab:
       propertyPath: cursor
       value: 
       objectReference: {fileID: 1284862056}
+    - target: {fileID: 23102753573603040, guid: d351ef1240e90c24290b733b9e5b941d,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23304048972106930, guid: d351ef1240e90c24290b733b9e5b941d,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d351ef1240e90c24290b733b9e5b941d, type: 2}
   m_IsPrefabParent: 0
