@@ -244,7 +244,7 @@ public class PlayerController : MonoBehaviour
         {
             if (tag == "crate" && hitInfo.transform.gameObject.GetComponent<CraveFlower> ().floating)
             {
-                if (hitInfo.transform.position.y > .5f)
+                if (hitInfo.transform.position.y > 1.2f)
                 {
                     hitInfo.transform.Translate (Vector3.down * Time.deltaTime);
                     ammo -= 1 * Time.deltaTime;

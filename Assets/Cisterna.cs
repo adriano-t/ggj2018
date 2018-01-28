@@ -8,16 +8,20 @@ public class Cisterna : MonoBehaviour {
     Light glow;
     float c = 0;
     float max = 390;
+    public AudioClip boilFx;
 
     public void Start()
     {
         glow = GetComponentInChildren<Light>();
+        GetComponent<AudioSource>().clip = boilFx;
+        GetComponent<AudioSource>().volume = 0;
+        GetComponent<AudioSource>().Play();
     }
 
     public void IncreaseEmission()
     {
-        c++; 
-        Debug.Log (c / max);
+        c++;
+        GetComponent<AudioSource>().volume = c / max ;
         GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp (Color.black, finalColor, c / max));
         if(c/max > 0.5f)
         { 
@@ -27,6 +31,7 @@ public class Cisterna : MonoBehaviour {
         if (c==max)
         {
             Grate.active = true;
+            Grate.start = true;
             Fire.dead = true;
         }
     }

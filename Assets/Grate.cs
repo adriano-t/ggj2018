@@ -8,6 +8,7 @@ public class Grate : MonoBehaviour
     bool grab;
     public static bool active;
     public static bool kill;
+    public static bool start;
 
     private void Start ()
     {
@@ -21,6 +22,8 @@ public class Grate : MonoBehaviour
             StartCoroutine (RoutineAlignCrate (other.gameObject.transform));
             grab = true;
         }
+
+
     }
 
     private void Update()
@@ -29,13 +32,56 @@ public class Grate : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }
+
+        if(start)
+        {
+            StartCoroutine(IncreaseVolume());
+            start = false;
+        }
     }
 
     public static void Kill()
     {
         foreach(var grate in grates)
-            grate.transform.GetChild (0).gameObject.SetActive (false);
+        {
+            grate.transform.GetChild(0).gameObject.SetActive(false);
+            grate.GetComponent<Grate>().Stop();
+        }
         active = false;
+    }
+
+    IEnumerator IncreaseVolume()
+    {
+        GetComponent<AudioSource>().volume = 0.0f;
+        GetComponent<AudioSource>().Play();
+
+        float t = 0;
+        while(t<1)
+        {
+            t += .1f;
+            GetComponent<AudioSource>().volume = t;
+            yield return new WaitForSeconds(.1f);
+        }
+
+
+    }
+
+    void Stop()
+    {
+        StartCoroutine(DecreaseVolume());
+    }
+
+    IEnumerator DecreaseVolume()
+    {
+        float t = 1;
+        while (t > 0)
+        {
+            t -= .1f;
+            GetComponent<AudioSource>().volume = t;
+            yield return new WaitForSeconds(.1f);
+        }
+
+        GetComponent<AudioSource>().Stop();
     }
 
     IEnumerator RoutineAlignCrate (Transform crate)
