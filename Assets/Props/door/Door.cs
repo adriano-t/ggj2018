@@ -15,18 +15,18 @@ public class Door : MonoBehaviour
     }
     private void Update ()
     { 
-        if(!open && Vector3.Distance(player.position, transform.position) < 5.0f)
+        if(!open && Vector3.Distance(player.position, startPos) < 5.0f)
         { 
             Open ();
         }
-        else if(open && Vector3.Distance (player.position, transform.position) > 5.0f)
+        else if(open && Vector3.Distance (player.position, startPos) > 5.0f)
         { 
             Close ();
         }
     }
 
     public void Open()
-    {
+    { 
         open = true;
         StartCoroutine (RoutineOpenClose (startPos + endPos));
     }
