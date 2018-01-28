@@ -20,6 +20,9 @@ ModelImporter:
     100024: Object
     100026: Pavimento
     100028: //RootNode
+    100030: Door_dx
+    100032: Door_ex
+    100034: porta_sx
     400000: _cornice_porta
     400002: _corridoio01_pavimento
     400004: _corridoio01_pavimento001
@@ -35,6 +38,9 @@ ModelImporter:
     400024: Object
     400026: Pavimento
     400028: //RootNode
+    400030: Door_dx
+    400032: Door_ex
+    400034: porta_sx
     2300000: _cornice_porta
     2300002: _corridoio01_pavimento
     2300004: _corridoio01_pavimento001
@@ -49,6 +55,9 @@ ModelImporter:
     2300022: Cupola_apribile
     2300024: Object
     2300026: Pavimento
+    2300028: Door_dx
+    2300030: Door_ex
+    2300032: porta_sx
     3300000: _cornice_porta
     3300002: _corridoio01_pavimento
     3300004: _corridoio01_pavimento001
@@ -63,6 +72,9 @@ ModelImporter:
     3300022: Cupola_apribile
     3300024: Object
     3300026: Pavimento
+    3300028: Door_dx
+    3300030: Door_ex
+    3300032: porta_sx
     4300000: _cornice_porta
     4300002: _corridoio01_pavimento
     4300004: _corridoio01_pavimento001
@@ -77,6 +89,9 @@ ModelImporter:
     4300022: Cupola_apribile
     4300024: Object
     4300026: Pavimento
+    4300028: Door_dx
+    4300030: Door_ex
+    4300032: porta_sx
   externalObjects: {}
   materials:
     importMaterials: 0

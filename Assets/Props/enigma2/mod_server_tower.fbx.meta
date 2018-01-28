@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5e5e21a6279ef21439f252d08bc909d8
-timeCreated: 1517132397
+timeCreated: 1517147873
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,21 +8,21 @@ ModelImporter:
     100000: Box002
     100002: cornice
     100004: group12_server_lp5
-    100006: polySurface22
-    100008: polySurface26
-    100010: polySurface27
-    100012: polySurface28
-    100014: server
-    100016: //RootNode
+    100006: //RootNode
+    100008: polySurface22
+    100010: polySurface26
+    100012: polySurface27
+    100014: polySurface28
+    100016: server
     400000: Box002
     400002: cornice
     400004: group12_server_lp5
-    400006: polySurface22
-    400008: polySurface26
-    400010: polySurface27
-    400012: polySurface28
-    400014: server
-    400016: //RootNode
+    400006: //RootNode
+    400008: polySurface22
+    400010: polySurface26
+    400012: polySurface27
+    400014: polySurface28
+    400016: server
     2300000: Box002
     2300002: cornice
     2300004: group12_server_lp5

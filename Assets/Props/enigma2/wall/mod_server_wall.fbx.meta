@@ -16,6 +16,7 @@ ModelImporter:
     100016: server_lp
     100018: //RootNode
     100020: server_wall_LP
+    100022: server_small_LP
     400000: polySurface31
     400002: polySurface32
     400004: server_02
@@ -27,6 +28,7 @@ ModelImporter:
     400016: server_lp
     400018: //RootNode
     400020: server_wall_LP
+    400022: server_small_LP
     2300000: polySurface31
     2300002: polySurface32
     2300004: server_02
@@ -35,6 +37,7 @@ ModelImporter:
     2300010: server_05
     2300012: server_angolo_lp
     2300014: server_wall_LP
+    2300016: server_small_LP
     3300000: polySurface31
     3300002: polySurface32
     3300004: server_02
@@ -43,6 +46,7 @@ ModelImporter:
     3300010: server_05
     3300012: server_angolo_lp
     3300014: server_wall_LP
+    3300016: server_small_LP
     4300000: server_wall_LP
     4300002: polySurface32
     4300004: server_03
@@ -51,6 +55,7 @@ ModelImporter:
     4300010: server_02
     4300012: server_angolo_lp
     4300014: polySurface31
+    4300016: server_small_LP
   externalObjects: {}
   materials:
     importMaterials: 0
