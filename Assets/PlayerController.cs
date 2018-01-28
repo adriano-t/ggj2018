@@ -223,11 +223,13 @@ public class PlayerController : MonoBehaviour
             {
                 //TODO
 
-                if (hitInfo.transform.GetComponent<Light>().intensity >=0.05f)
+                if (hitInfo.transform.GetComponent<Light>().intensity >= 0.002f)
                 {
-                    ammo += 0.05f;
-                    hitInfo.transform.GetComponent<Light>().intensity -= 0.05f;
-                    SetGunParticles(hitInfo.point, gun.transform.position, Color.Lerp(Color.white,Color.yellow,0.25f));
+                    ammo += 0.002f;
+                    hitInfo.transform.GetComponent<Light>().intensity -= 0.002f;
+                    hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.white, Color.black, ammo));
+
+                    SetGunParticles (hitInfo.point, gun.transform.position, Color.Lerp(Color.white,Color.yellow,0.25f));
                 }
 
 
@@ -255,9 +257,11 @@ public class PlayerController : MonoBehaviour
 
                 if(hitInfo.transform.GetComponent<Light>().intensity<1f)
                 {
-                    ammo -= 0.05f;
-                    hitInfo.transform.GetComponent<Light>().intensity += 0.05f;
-                    SetGunParticles(gun.transform.position, hitInfo.point, Color.Lerp(Color.white, Color.yellow, 0.25f));
+                    ammo -= 0.002f;
+                    hitInfo.transform.GetComponent<Light>().intensity += 0.002f;
+
+                    hitInfo.transform.GetComponent<Renderer> ().material.SetColor ("_EmissionColor", Color.Lerp (Color.white, Color.black, ammo));
+                    SetGunParticles (gun.transform.position, hitInfo.point, Color.Lerp(Color.white, Color.yellow, 0.25f));
                 }
 
 
