@@ -13,7 +13,7 @@ public class Outro : MonoBehaviour {
     public Text finalText;
     AudioSource source;
 
-    private void OnEnable()
+    public void Run()
     {
         source = GetComponent<AudioSource>();
         StartCoroutine(OutroRoutine());

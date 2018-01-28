@@ -6,6 +6,7 @@ public class Leva : MonoBehaviour
 {
     public Transform[] pieces = new Transform[8];
     public AudioSource source;
+    public Outro outro;
 
     bool activated;
 
@@ -36,10 +37,12 @@ public class Leva : MonoBehaviour
             foreach (var piece in pieces)
             {
                 float angle = piece.localEulerAngles.z;
-                piece.localPosition += new Vector3 (Mathf.Cos (Mathf.Deg2Rad * (angle + 10)), Mathf.Sin (Mathf.Deg2Rad * (angle + 10)), 0)*0.1f;
+                piece.localPosition += new Vector3 (Mathf.Cos (Mathf.Deg2Rad * (angle + 10)), Mathf.Sin (Mathf.Deg2Rad * (angle + 10)), 0)*0.01f;
             }
             t += Time.deltaTime * 0.01f;
             yield return new WaitForEndOfFrame ();
         }
+
+        outro.Run();
     }
 }

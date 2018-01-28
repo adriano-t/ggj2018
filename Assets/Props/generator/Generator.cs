@@ -6,15 +6,17 @@ public class Generator : MonoBehaviour
 {
     public AudioClip clip;
     bool working;
-    public GameObject leva;
+    public GameObject light;
+    public PlayerController pc;
 
     void Update()
     {
-       if(GetComponent<Light>().intensity>=0.9 && !working)
+       if(GetComponent<Light>().intensity>=0.7f && !working)
         {
             working = true;
             GetComponent<AudioSource>().PlayOneShot(clip);
-            leva.SetActive(true);
+            pc.done = true;
+            light.SetActive(true);
         }
     }
 }

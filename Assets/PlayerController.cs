@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     AudioClip[] soundSteps;
     AudioSource sndSourceSteps;
     bool soundStepsCanPlay;
+    public bool done;
 
     public Transform cam;
     private Rigidbody rb;
@@ -201,7 +202,7 @@ public class PlayerController : MonoBehaviour
         {
             tag = hitInfo.collider.tag;
 
-            if (Input.GetMouseButtonDown (0))
+            if (Input.GetMouseButtonDown (0) && done)
             {
                 if (tag == "lever")
                 {
