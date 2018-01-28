@@ -9,6 +9,7 @@ TagManager:
   - fire
   - cisterna
   - light
+  - lever
   layers:
   - Default
   - TransparentFX
