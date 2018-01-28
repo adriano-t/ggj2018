@@ -17,7 +17,7 @@ public class Grate : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     { 
-        if(other.gameObject.tag == "crate" && !grab)
+        if(other.gameObject.tag == "crate" && !grab && active)
         {
             StartCoroutine (RoutineAlignCrate (other.gameObject.transform));
             grab = true;
