@@ -12,11 +12,10 @@ public class Valvola : MonoBehaviour {
             foreach (var crate in crates)
             {
                 crate.floating = false;
+ 
                 crate.GetComponent<Rigidbody> ().isKinematic = false;
             }
             Grate.Kill (); //don't do this in your lief (sono le 2:01 e manca poco alla consegna)
-
-            //TODO PLAY SAUND
         }
 
 

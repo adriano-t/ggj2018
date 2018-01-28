@@ -219,6 +219,19 @@ public class PlayerController : MonoBehaviour
                 ammo += 0.005f;
                 SetGunParticles(hitInfo.point, gun.transform.position, Color.red);
             }
+            else if (tag == "light")
+            {
+                //TODO
+
+                if (hitInfo.transform.GetComponent<Light>().intensity >=0.05f)
+                {
+                    ammo += 0.05f;
+                    hitInfo.transform.GetComponent<Light>().intensity -= 0.05f;
+                    SetGunParticles(hitInfo.point, gun.transform.position, Color.Lerp(Color.white,Color.yellow,0.25f));
+                }
+
+
+            }
             else
             {
                 ps.gameObject.SetActive(false);
@@ -239,10 +252,15 @@ public class PlayerController : MonoBehaviour
             else if (tag == "light")
             {
                 //TODO
-                     hitInfo.transform.Translate (Vector3.down * Time.deltaTime);
-                    ammo -= 1 * Time.deltaTime;
-                    SetGunParticles (gun.transform.position, hitInfo.point, Color.blue);
-                
+
+                if(hitInfo.transform.GetComponent<Light>().intensity<1f)
+                {
+                    ammo -= 0.05f;
+                    hitInfo.transform.GetComponent<Light>().intensity += 0.05f;
+                    SetGunParticles(gun.transform.position, hitInfo.point, Color.Lerp(Color.white, Color.yellow, 0.25f));
+                }
+
+
             }
             else if (tag == "cisterna" && ammo > 0)
             {
