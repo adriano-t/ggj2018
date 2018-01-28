@@ -21,7 +21,7 @@ public class Cisterna : MonoBehaviour {
         Color nextColor = Color.Lerp(current, finalColor,Time.deltaTime*0.5f);
         glow.intensity = Mathf.Lerp(glow.intensity, 5f,Time.deltaTime*0.25f);
         GetComponent<Renderer>().material.SetColor("_EmissionColor", nextColor);
-        if(c==325)
+        if(c==400)
         {
             Grate.active = true;
         }
