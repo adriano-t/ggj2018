@@ -5,9 +5,13 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
 
-    public bool dead;
+    public static bool dead;
+    static Fire instance;
     public ParticleSystem p1;
-
+    private void Start ()
+    {
+        instance = this;
+    }
     public void DecreaseFire()
     {
 
@@ -25,5 +29,12 @@ public class Fire : MonoBehaviour
         ParticleSystem.MainModule main = GetComponentInChildren<ParticleSystem>().main;
         main.startLifetime = curve;
 
+    }
+
+    public static void Die()
+    { 
+        ParticleSystem.MainModule main = instance.GetComponentInChildren<ParticleSystem> ().main;
+        main.startLifetime = new ParticleSystem.MinMaxCurve (0);
+        dead = true;
     }
 }

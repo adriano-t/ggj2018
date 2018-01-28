@@ -213,7 +213,7 @@ public class PlayerController : MonoBehaviour
                     SetGunParticles(hitInfo.point, gun.transform.position, Color.blue);
                 }
             }
-            else if (tag == "fire" && !hitInfo.transform.GetComponent<Fire>().dead)
+            else if (tag == "fire" && !Fire.dead)
             {
                 hitInfo.transform.GetComponent<Fire>().DecreaseFire();
                 ammo += 0.005f;
