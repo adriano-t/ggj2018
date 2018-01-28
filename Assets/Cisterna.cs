@@ -6,8 +6,8 @@ public class Cisterna : MonoBehaviour {
 
     Color finalColor = new Color(1f, 0.3103447f, 0f);
     Light glow;
-    int c = 0;
-
+    float c = 0;
+    float max = 390;
 
     public void Start()
     {
@@ -16,14 +16,18 @@ public class Cisterna : MonoBehaviour {
 
     public void IncreaseEmission()
     {
-        c++;
-        Color current = GetComponent<Renderer>().material.GetColor("_EmissionColor");
-        Color nextColor = Color.Lerp(current, finalColor,Time.deltaTime*0.5f);
-        glow.intensity = Mathf.Lerp(glow.intensity, 5f,Time.deltaTime*0.25f);
-        GetComponent<Renderer>().material.SetColor("_EmissionColor", nextColor);
-        if(c==400)
+        c++; 
+        Debug.Log (c / max);
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.Lerp (Color.black, finalColor, c / max));
+        if(c/max > 0.5f)
+        { 
+            glow.range = Mathf.Lerp (1, 5, (c/max - 0.5f) * 2 );
+        }
+
+        if (c==max)
         {
             Grate.active = true;
+            Fire.dead = true;
         }
     }
 }
