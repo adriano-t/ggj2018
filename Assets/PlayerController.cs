@@ -279,6 +279,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if(!emitting)
         {
             ps.gameObject.SetActive(false);
@@ -311,7 +316,7 @@ public class PlayerController : MonoBehaviour
         if (jump)
         {
             jump = false;
-            rb.AddForce(Vector3.up * 5.5f, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 6f, ForceMode.VelocityChange);
         }
     }
 
