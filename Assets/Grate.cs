@@ -1,11 +1,18 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Grate : MonoBehaviour
 {
-
+    static List<Grate> grates = new List<Grate>();
     bool grab;
     public static bool active;
+    public static bool kill;
+
+    private void Start ()
+    {
+        grates.Add (this);
+    }
 
     private void OnTriggerEnter (Collider other)
     { 
@@ -22,6 +29,13 @@ public class Grate : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }
+    }
+
+    public static void Kill()
+    {
+        foreach(var grate in grates)
+            grate.transform.GetChild (0).gameObject.SetActive (false);
+        active = false;
     }
 
     IEnumerator RoutineAlignCrate (Transform crate)
