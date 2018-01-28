@@ -1193,11 +1193,6 @@ Prefab:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
-    - target: {fileID: 23587563882588294, guid: 1e3e760fee633644bb0e20734b6a17df,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fd7a3a89dcfb6a54794ccf0f1e324fac, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e3e760fee633644bb0e20734b6a17df, type: 2}
   m_IsPrefabParent: 0
@@ -2113,7 +2108,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: aadc85a54f52d5d41ab1dd55675454b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.41
+      value: 3.21
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aadc85a54f52d5d41ab1dd55675454b8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2121,7 +2116,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aadc85a54f52d5d41ab1dd55675454b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 46.33
+      value: 54.875
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aadc85a54f52d5d41ab1dd55675454b8, type: 3}
       propertyPath: m_LocalRotation.x
