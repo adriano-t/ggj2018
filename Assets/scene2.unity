@@ -1193,6 +1193,11 @@ Prefab:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 23587563882588294, guid: 1e3e760fee633644bb0e20734b6a17df,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd7a3a89dcfb6a54794ccf0f1e324fac, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e3e760fee633644bb0e20734b6a17df, type: 2}
   m_IsPrefabParent: 0
