@@ -1,44 +1,32 @@
 fileFormatVersion: 2
-guid: b9cfaf195be73f546bf033898c9a94d0
-timeCreated: 1517120472
+guid: 366844bb926a51641b0b29c3325659ae
+timeCreated: 1517153845
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: group18
-    100002: monitor2
-    100004: monitor3
-    100006: pCube2
+    100000: Consolle
+    100002: //RootNode
+    100004: monitor2
+    100006: monitor3
     100008: screen
-    100010: screen1
-    100012: screen2
-    100014: //RootNode
-    400000: group18
-    400002: monitor2
-    400004: monitor3
-    400006: pCube2
+    400000: Consolle
+    400002: //RootNode
+    400004: monitor2
+    400006: monitor3
     400008: screen
-    400010: screen1
-    400012: screen2
-    400014: //RootNode
-    2300000: monitor2
-    2300002: monitor3
-    2300004: pCube2
+    2300000: Consolle
+    2300002: monitor2
+    2300004: monitor3
     2300006: screen
-    2300008: screen1
-    2300010: screen2
-    3300000: monitor2
-    3300002: monitor3
-    3300004: pCube2
+    3300000: Consolle
+    3300002: monitor2
+    3300004: monitor3
     3300006: screen
-    3300008: screen1
-    3300010: screen2
     4300000: screen
     4300002: monitor2
     4300004: monitor3
-    4300006: screen1
-    4300008: pCube2
-    4300010: screen2
+    4300006: Consolle
   externalObjects: {}
   materials:
     importMaterials: 0

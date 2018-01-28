@@ -10,8 +10,8 @@ public class Door : MonoBehaviour
     public Vector3 endPos;
     bool open;
     private void Start ()
-    {
-        startPos = transform.position;
+    { 
+        startPos = GetComponent<Renderer> ().bounds.center;
     }
     private void Update ()
     { 
@@ -28,25 +28,25 @@ public class Door : MonoBehaviour
     public void Open()
     { 
         open = true;
-        StartCoroutine (RoutineOpenClose (startPos + endPos));
+        StartCoroutine (RoutineOpenClose (endPos));
     }
 
     public void Close()
     {
         open = false;
-        StartCoroutine (RoutineOpenClose (startPos));
+        StartCoroutine (RoutineOpenClose (-endPos));
     }
 
     private IEnumerator RoutineOpenClose (Vector3 targetPos)
     {
-        Vector3 pos = transform.position;
+        Vector3 pos = transform.localPosition;
         float t = 0;
         while(t < 1)
         {
-            transform.position = Vector3.Lerp (pos, targetPos, t);
+            transform.localPosition = Vector3.Lerp (pos, pos + targetPos, t);
             t += Time.deltaTime * 2;
             yield return new WaitForEndOfFrame ();
         }
-        transform.position = targetPos;
+        transform.position = pos + targetPos;
     }
 }
