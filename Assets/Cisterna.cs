@@ -14,7 +14,7 @@ public class Cisterna : MonoBehaviour {
     {
         glow = GetComponentInChildren<Light>();
         GetComponent<AudioSource>().clip = boilFx;
-        GetComponent<AudioSource>().volume = 0;
+        GetComponent<AudioSource>().volume = 0.2f;
         GetComponent<AudioSource>().Play();
     }
 
