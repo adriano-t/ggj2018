@@ -7,6 +7,7 @@ public class Generator : MonoBehaviour
     public AudioClip clip;
     bool working;
     public GameObject light;
+    public GameObject spotlight;
     public PlayerController pc;
 
     void Update()
@@ -17,6 +18,7 @@ public class Generator : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(clip);
             pc.done = true;
             light.SetActive(true);
+            spotlight.SetActive(false);
         }
     }
 }

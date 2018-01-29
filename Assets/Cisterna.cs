@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cisterna : MonoBehaviour {
+public class Cisterna : MonoBehaviour
+{
 
     Color startGlowColor = new Color (0.5f, 0.1f, 0f);
     Color finalColor = new Color (1f, 0.3103447f, 0f);
@@ -19,7 +20,7 @@ public class Cisterna : MonoBehaviour {
         GetComponent<AudioSource>().Play();
         startGlowColor = GetComponent<Renderer> ().material.GetColor ("_EmissionColor");
     }
-
+    
     public void IncreaseEmission()
     {
         c++;

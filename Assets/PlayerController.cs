@@ -84,7 +84,6 @@ public class PlayerController : MonoBehaviour
         float bobbingY = 0;
         if (directionVector != Vector3.zero)
         {
-
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 speed = Mathf.Lerp(speed, runSpeed, 0.1f);
