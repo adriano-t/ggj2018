@@ -32,7 +32,6 @@ public class IntroManager : MonoBehaviour
             yield return new WaitForEndOfFrame ();
         } 
         background.color = new Color (0f, 0f, 0f, 0F);
-        text.color = new Color (1f, 1f, 1f, 0);
-        source.Stop();
+        text.color = new Color (1f, 1f, 1f, 0); 
     }
 }

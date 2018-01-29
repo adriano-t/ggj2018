@@ -40,7 +40,7 @@ public class Leva : MonoBehaviour
                 float angle = piece.localEulerAngles.z;
                 piece.localPosition += new Vector3 (Mathf.Cos (Mathf.Deg2Rad * (angle + 10)), Mathf.Sin (Mathf.Deg2Rad * (angle + 10)), 0)*0.01f;
             }
-            t += Time.deltaTime * 0.1f;
+            t += Time.deltaTime / 20.0f;
             yield return new WaitForEndOfFrame ();
         }
 
